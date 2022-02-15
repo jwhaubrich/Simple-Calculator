@@ -1,5 +1,5 @@
 //finished this project with 28 minutes left
-package main.java.com;
+package src.main.java.com;
         
 import java.util.Locale;
 import java.util.Scanner;
