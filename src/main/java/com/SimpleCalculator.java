@@ -7,120 +7,97 @@ import java.util.Scanner;
 public class SimpleCalculator {
 
     public static void main(String[] args) {
-	int firstNumber = 0;
-    int secondNumber = 0;
-    int tracker = 1;
-    int result;
-
-    String operation;
-
-    Scanner input = new Scanner(System.in);
+        int firstNumber = 0;
+        int secondNumber = 0;
+        int tracker = 1;
+        int result;
+        String operation;
+        Scanner input = new Scanner(System.in);
 
         System.out.println("*****Welcome to the Simple Calculator Application***** \n");
 
-        /*
-        Exceptions to look out for:
-        1. If user enters a letter
-        2. If user tries to divide by 0
-         */
-
-        while(tracker == 1){
+        while (tracker == 1) {
             System.out.println("What operation you want to perform? (add, subtract, divide, multiply): ");
-            /* Exceptions to look for:
-                1. if they don't enter in one of these operations: enter numbers, enter other words or enter letter
-                    - CREATED PROTECTION
-                */
             operation = input.nextLine().toUpperCase(Locale.ROOT); //forces all the input to change to UPPERCASE
 
             //below if ensures that user has entered in one of the provided operations
-            if(operation.contains("ADD") || operation.contains("SUBTRACT")|| operation.contains("DIVIDE")|| operation.contains("MULTIPLY")) {
+            if (operation.contains("ADD") || operation.contains("SUBTRACT") || operation.contains("DIVIDE") || operation.contains("MULTIPLY")) {
+
+                System.out.println("Please enter first number: ");
+                try { // taking the number as a String and parsing it as an Integer
+                    firstNumber = Integer.parseInt(input.nextLine());
+                } catch (Exception e) { //create my own exception somehow
+                    System.out.println("You didn't enter a number. Please enter a number next time. ");//create my own exception somehow
+                }
+
+                System.out.println("Please enter second number: ");
+                try {
+                    secondNumber = Integer.parseInt(input.nextLine());
+                } catch (Exception e) { //create my own exception somehow
+                    System.out.println("Please enter a number next time."); //create my own exception somehow
+                }
+
                 switch (operation) {
                     case "ADD":
-                        System.out.println("First number to add: ");
-                        try { // taking the number as a String and parsing it as an Integer
-                            firstNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("You didn't enter a number. Please enter a number next time. ");
-                        }
-                        System.out.println("Second number to add: ");
-                        try {
-                            secondNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("Please enter a number next time.");
-                        }
-                        result = firstNumber + secondNumber;
-                        System.out.println("The addition of " + firstNumber + " and " + secondNumber + " is: ");
-                        System.out.println(result);
+                        addFunction(firstNumber, secondNumber);
                         break;
                     case "SUBTRACT":
-                        System.out.println("Subtract this number: ");
-                        try { // taking the number as a String and parsing it as an Integer
-                            firstNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("You didn't enter a number. Please enter a number next time. ");
-                        }
-                        System.out.println("From this number: ");
-                        try {
-                            secondNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("Please enter a number next time.");
-                        }
-                        result = secondNumber - firstNumber;
-                        System.out.println("Subtracting " + firstNumber + " from " + secondNumber + " is: ");
-                        System.out.println(result);
+                        subtractFunction(firstNumber, secondNumber);
                         break;
                     case "MULTIPLY":
-                        System.out.println("Multiply this number: ");
-                        try { // taking the number as a String and parsing it as an Integer
-                            firstNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("You didn't enter a number. Please enter a number next time. ");
-                        }
-                        System.out.println("By this number: ");
-                        try {
-                            secondNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("Please enter a number next time.");
-                        }
-                        result = secondNumber * firstNumber;
-                        System.out.println("The number: " + firstNumber + " multiplied by " + secondNumber + " is: ");
-                        System.out.println(result);
+                        multiplyFunction(firstNumber, secondNumber);
                         break;
                     case "DIVIDE":
-                        System.out.println("Divide this number: ");
-                        try { // taking the number as a String and parsing it as an Integer
-                            firstNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("You didn't enter a number. Please enter a number next time. ");
-                        }
-                        System.out.println("By this number: ");
-                        try {
-                            secondNumber = Integer.parseInt(input.nextLine());
-                        } catch (Exception e) {
-                            System.out.println("Please enter a number next time.");
-                        }
-
-                        try{
-                            result = firstNumber/secondNumber;
-                        }
-                        catch(ArithmeticException e){
-                            System.out.println("You tried to divide by 0, which is not a number.");
-                            System.out.println("Don't divide by 0.\n");
-                            break;
-                    }
-                        System.out.println("The number: " + firstNumber + " divided by " + secondNumber + " is: ");
-                        System.out.println(result);
+                        divideFunction(firstNumber, secondNumber);
                         break;
                 }
             }
             else{ //if not one of the provided operations then print this out
-                System.out.println("*Warning*: You didn't enter one of the listed operations.");
-                System.out.println("Please enter one of the listed operations next time.\n");
+                    System.out.println("\n***Warning***");
+                System.out.println("You didn't enter one of the listed operations.");
+                    System.out.println("Please enter one of the listed operations next time.\n");
                 }
 
-            System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
-            tracker = Integer.parseInt(input.nextLine());
+                System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
+                tracker = Integer.parseInt(input.nextLine());
         }
-        System.out.println("Program Finished");
+        System.out.println("You have exited the calculator.");
+    }
+
+
+    public static void addFunction(int number1, int number2){
+        int result;
+        result = number1 + number2;
+        System.out.println("The addition of " + number1 + " and " + number2 + " is: ");
+        System.out.println(result);
+    }
+
+    public static void subtractFunction(int number1, int number2){
+        int result;
+        result = number1 - number2;
+        System.out.println("The subtraction of " + number1 + " by " + number2 + " is: ");
+        System.out.println(result);
+    }
+
+    public static void multiplyFunction(int number1, int number2){
+        int result;
+        result = number1 * number2;
+        System.out.println("The multiplication of " + number1 + " by " + number2 + " is: ");
+        System.out.println(result);
+    }
+
+    public static void divideFunction(int number1, int number2){
+        int result;
+
+        try{
+            result = number1/number2;
+        }
+        catch(ArithmeticException e){
+            System.out.println("You tried to divide by 0, which is not a number.");
+            System.out.println("Don't divide by 0.\n");
+            return;
+        }
+        System.out.println("The division of " + number1 + " by " + number2 + " is: ");
+        System.out.println(result);
     }
 }
