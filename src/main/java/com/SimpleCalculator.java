@@ -4,7 +4,7 @@ package src.main.java.com;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Main {
+public class SimpleCalculator {
 
     public static void main(String[] args) {
 	int firstNumber = 0;
