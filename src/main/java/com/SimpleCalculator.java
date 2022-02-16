@@ -1,6 +1,6 @@
 //finished this project with 28 minutes left
 package src.main.java.com;
-        
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -9,33 +9,45 @@ public class SimpleCalculator {
     public static void main(String[] args) {
         int firstNumber = 0;
         int secondNumber = 0;
-        int tracker = 1;
-        int result;
+        int continueCalculatorCheck = 1;
         String operation;
         Scanner input = new Scanner(System.in);
 
         System.out.println("*****Welcome to the Simple Calculator Application***** \n");
 
-        while (tracker == 1) {
+        while (continueCalculatorCheck == 1) {
             System.out.println("What operation you want to perform? (add, subtract, divide, multiply): ");
             operation = input.nextLine().toUpperCase(Locale.ROOT); //forces all the input to change to UPPERCASE
 
             //below if ensures that user has entered in one of the provided operations
             if (operation.contains("ADD") || operation.contains("SUBTRACT") || operation.contains("DIVIDE") || operation.contains("MULTIPLY")) {
 
-                System.out.println("Please enter first number: ");
-                try { // taking the number as a String and parsing it as an Integer
-                    firstNumber = Integer.parseInt(input.nextLine());
-                } catch (Exception e) { //create my own exception somehow
-                    System.out.println("You didn't enter a number. Please enter a number next time. ");//create my own exception somehow
+                try {
+                    System.out.println("Please enter first number: ");
+                    if ((!input.hasNextInt())) {
+                        throw new NotAValidNumberException();
+                    } else {
+                        firstNumber = Integer.parseInt((input.nextLine()));
+                    }
+                } catch (NotAValidNumberException e) {
+                    System.out.println(e.getMessage());
+                    System.out.println("Program Finished.");
+                    break;
                 }
 
-                System.out.println("Please enter second number: ");
-                try {
-                    secondNumber = Integer.parseInt(input.nextLine());
-                } catch (Exception e) { //create my own exception somehow
-                    System.out.println("Please enter a number next time."); //create my own exception somehow
-                }
+                    try {
+                        System.out.println("Please enter second number: ");
+                        if ((!input.hasNextInt())) {
+                            throw new NotAValidNumberException();
+                        } else {
+                            secondNumber = Integer.parseInt((input.nextLine()));
+                        }
+                    } catch (NotAValidNumberException e) {
+                        System.out.println(e.getMessage());
+                        System.out.println("Program Finished.");
+                        break;
+                    }
+
 
                 switch (operation) {
                     case "ADD":
@@ -51,15 +63,14 @@ public class SimpleCalculator {
                         divideFunction(firstNumber, secondNumber);
                         break;
                 }
-            }
-            else{ //if not one of the provided operations then print this out
-                    System.out.println("\n***Warning***");
+            } else { //if not one of the provided operations then print this out
+                System.out.println("\n***Warning***");
                 System.out.println("You didn't enter one of the listed operations.");
-                    System.out.println("Please enter one of the listed operations next time.\n");
-                }
+                System.out.println("Please enter one of the listed operations next time.\n");
+            }
 
-                System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
-                tracker = Integer.parseInt(input.nextLine());
+            System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
+            continueCalculatorCheck = Integer.parseInt(input.nextLine());
         }
         System.out.println("You have exited the calculator.");
     }
