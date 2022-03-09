@@ -1,4 +1,3 @@
-//finished this project with 28 minutes left
 package src.main.java.com;
 
 import java.util.Locale;
@@ -7,62 +6,28 @@ import java.util.Scanner;
 public class SimpleCalculator {
 
     public static void main(String[] args) {
-        int firstNumber = 0;
-        int secondNumber = 0;
-        int continueCalculatorCheck = 1;
-        String operation;
+        int firstNumber, secondNumber;
+        int continueCalculatorOperation = 1;
         Scanner input = new Scanner(System.in);
+        String operation;
 
-        System.out.println("*****Welcome to the Simple Calculator Application***** \n");
+        System.out.println("*****Simple Calculator***** \n");
 
-        while (continueCalculatorCheck == 1) {
+        while (continueCalculatorOperation == 1) {
             System.out.println("What operation you want to perform? (add, subtract, divide, multiply): ");
             operation = input.nextLine().toUpperCase(Locale.ROOT); //forces all the input to change to UPPERCASE
 
             //below if ensures that user has entered in one of the provided operations
             if (operation.contains("ADD") || operation.contains("SUBTRACT") || operation.contains("DIVIDE") || operation.contains("MULTIPLY")) {
 
-                try {
-                    System.out.println("Please enter first number: ");
-                    if ((!input.hasNextInt())) {
-                        throw new NotAValidNumberException();
-                    } else {
-                        firstNumber = Integer.parseInt((input.nextLine()));
-                    }
-                } catch (NotAValidNumberException e) {
-                    System.out.println(e.getMessage());
-                    System.out.println("Program Finished.");
-                    break;
-                }
+                System.out.println("Enter first number: ");
+                firstNumber = getNumbers();
 
-                    try {
-                        System.out.println("Please enter second number: ");
-                        if ((!input.hasNextInt())) {
-                            throw new NotAValidNumberException();
-                        } else {
-                            secondNumber = Integer.parseInt((input.nextLine()));
-                        }
-                    } catch (NotAValidNumberException e) {
-                        System.out.println(e.getMessage());
-                        System.out.println("Program Finished.");
-                        break;
-                    }
+                System.out.println("Please enter second number: ");
+                secondNumber = getNumbers();
 
+                performOperations(operation, firstNumber, secondNumber);
 
-                switch (operation) {
-                    case "ADD":
-                        addFunction(firstNumber, secondNumber);
-                        break;
-                    case "SUBTRACT":
-                        subtractFunction(firstNumber, secondNumber);
-                        break;
-                    case "MULTIPLY":
-                        multiplyFunction(firstNumber, secondNumber);
-                        break;
-                    case "DIVIDE":
-                        divideFunction(firstNumber, secondNumber);
-                        break;
-                }
             } else { //if not one of the provided operations then print this out
                 System.out.println("\n***Warning***");
                 System.out.println("You didn't enter one of the listed operations.");
@@ -70,31 +35,58 @@ public class SimpleCalculator {
             }
 
             System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
-            continueCalculatorCheck = Integer.parseInt(input.nextLine());
+            continueCalculatorOperation = Integer.parseInt(input.nextLine());
         }
         System.out.println("You have exited the calculator.");
     }
 
+    public static void performOperations(String myOperation, int myFirstNumber, int mySecondNumber){
+        switch (myOperation) {
+            case "ADD":
+                System.out.println("The addition of " + myFirstNumber + " and " + mySecondNumber + " is: " + addFunction(myFirstNumber, mySecondNumber) );
+                break;
+            case "SUBTRACT":
+                System.out.println("The subtraction of " + myFirstNumber + " by " + mySecondNumber + " is: " + subtractFunction(myFirstNumber, mySecondNumber));
+                break;
+            case "MULTIPLY":
+                System.out.println("The multiplication of " + myFirstNumber + " by " + mySecondNumber + " is: " + multiplyFunction(myFirstNumber, mySecondNumber));
+                break;
+            case "DIVIDE":
+                divideFunction(myFirstNumber, mySecondNumber);
+                break;
+        }
+    }
 
-    public static void addFunction(int number1, int number2){
+    public static int getNumbers()  {
+        int numberToUse = 0;
+        Scanner input = new Scanner(System.in);
+
+            try{
+                numberToUse = Integer.parseInt((input.nextLine()));
+            }
+            catch(NumberFormatException e){
+                System.out.println("Type a number next time.");
+            }
+
+        return numberToUse;
+    }
+
+    public static int addFunction(int number1, int number2){
         int result;
         result = number1 + number2;
-        System.out.println("The addition of " + number1 + " and " + number2 + " is: ");
-        System.out.println(result);
+        return result;
     }
 
-    public static void subtractFunction(int number1, int number2){
+    public static int subtractFunction(int number1, int number2){
         int result;
         result = number1 - number2;
-        System.out.println("The subtraction of " + number1 + " by " + number2 + " is: ");
-        System.out.println(result);
+        return result;
     }
 
-    public static void multiplyFunction(int number1, int number2){
+    public static int multiplyFunction(int number1, int number2){
         int result;
         result = number1 * number2;
-        System.out.println("The multiplication of " + number1 + " by " + number2 + " is: ");
-        System.out.println(result);
+        return result;
     }
 
     public static void divideFunction(int number1, int number2){
