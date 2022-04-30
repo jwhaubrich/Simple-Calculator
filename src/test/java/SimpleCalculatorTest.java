@@ -5,12 +5,12 @@ class SimpleCalculatorTest {
 
     @Test
     void addFunction() {
-        assertEquals(4, SimpleCalculator.addFunction(2, 2));
+        assertEquals(4, PerformOperations.addFunction(2, 2));
     }
 
     @Test
     void subtractFunction() {
-        assertEquals(5, SimpleCalculator.subtractFunction(10,5));
+        assertEquals(5, PerformOperations.subtractFunction(10,5));
     }
 
     @Test//how do I test this?
@@ -20,12 +20,12 @@ class SimpleCalculatorTest {
 
     @Test
     void multiplyFunction() {
-        assertEquals(25, SimpleCalculator.multiplyFunction(5,5));
+        assertEquals(25, PerformOperations.multiplyFunction(5,5));
     }
 
     @Test
     void shouldOperatorFound() {
 
-        assertEquals(25, SimpleCalculator.multiplyFunction(5,5));
+        assertEquals(25, PerformOperations.multiplyFunction(5,5));
     }
 }
