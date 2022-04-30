@@ -1,5 +1,3 @@
-package src.main.java.com;
-
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,10 +12,9 @@ public class SimpleCalculator {
         System.out.println("*****Simple Calculator***** \n");
 
         while (continueCalculatorOperation == 1) {
-            System.out.println("What operation you want to perform? (add, subtract, divide, multiply): ");
-            operation = input.nextLine().toUpperCase(Locale.ROOT); //forces all the input to change to UPPERCASE
+            System.out.println("What operation do you want to perform? (add, subtract, divide, multiply): ");
+            operation = input.nextLine().toUpperCase(Locale.ROOT);
 
-            //below if ensures that user has entered in one of the provided operations
             if (operation.contains("ADD") || operation.contains("SUBTRACT") || operation.contains("DIVIDE") || operation.contains("MULTIPLY")) {
 
                 System.out.println("Enter first number: ");
@@ -28,7 +25,7 @@ public class SimpleCalculator {
 
                 performOperations(operation, firstNumber, secondNumber);
 
-            } else { //if not one of the provided operations then print this out
+            } else {
                 System.out.println("\n***Warning***");
                 System.out.println("You didn't enter one of the listed operations.");
                 System.out.println("Please enter one of the listed operations next time.\n");
@@ -41,6 +38,7 @@ public class SimpleCalculator {
     }
 
     public static void performOperations(String myOperation, int myFirstNumber, int mySecondNumber){
+
         switch (myOperation) {
             case "ADD":
                 System.out.println("The addition of " + myFirstNumber + " and " + mySecondNumber + " is: " + addFunction(myFirstNumber, mySecondNumber) );
@@ -90,7 +88,7 @@ public class SimpleCalculator {
     }
 
     public static void divideFunction(int number1, int number2){
-        int result;
+        int result = 0;
 
         try{
             result = number1/number2;
@@ -100,7 +98,6 @@ public class SimpleCalculator {
             System.out.println("Don't divide by 0.\n");
             return;
         }
-        System.out.println("The division of " + number1 + " by " + number2 + " is: ");
-        System.out.println(result);
+        System.out.println("The division of " + number1 + " by " + number2+ " is: " + result);
     }
 }
