@@ -12,7 +12,7 @@ public class DisplayResults {
                 System.out.println("The multiplication of " + myFirstNumber + " by " + mySecondNumber + " is: " + PerformOperations.multiplyFunction(myFirstNumber, mySecondNumber));
                 break;
             case "DIVIDE":
-                PerformOperations.divideFunction(myFirstNumber, mySecondNumber);
+                System.out.println("The division of " + myFirstNumber + " by " + mySecondNumber+ " is: " + PerformOperations.divideFunction(myFirstNumber, mySecondNumber));
                 break;
         }
     }

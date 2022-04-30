@@ -11,6 +11,11 @@ public class OperationCheck {
             System.out.println("Please enter second number: ");
             secondNumber = NumberVerification.getNumbers();
 
+            if(secondNumber == 0 && operation.contains("DIVIDE")) {
+                System.out.println("Can't divide by 0");
+                return;
+            }
+
             DisplayResults.performOperations(operation, firstNumber, secondNumber);
         } else
 

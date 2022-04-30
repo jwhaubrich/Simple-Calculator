@@ -4,28 +4,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class SimpleCalculatorTest {
 
     @Test
-    void addFunction() {
-        assertEquals(4, PerformOperations.addFunction(2, 2));
-    }
+    void addFunction() { assertEquals(4, PerformOperations.addFunction(2, 2)); }
 
     @Test
-    void subtractFunction() {
-        assertEquals(5, PerformOperations.subtractFunction(10,5));
-    }
-
-    @Test//how do I test this?
-    void divideFunction() {
-        //assertEquals(2, SimpleCalculator.divideFunction(10,10));
-    }
+    void subtractFunction() { assertEquals(5, PerformOperations.subtractFunction(10,5)); }
 
     @Test
-    void multiplyFunction() {
-        assertEquals(25, PerformOperations.multiplyFunction(5,5));
-    }
+    void divideFunction() { assertEquals(5, PerformOperations.divideFunction(10,2)); }
 
     @Test
-    void shouldOperatorFound() {
+    void multiplyFunction() { assertEquals(25, PerformOperations.multiplyFunction(5,5)); }
 
-        assertEquals(25, PerformOperations.multiplyFunction(5,5));
-    }
 }
