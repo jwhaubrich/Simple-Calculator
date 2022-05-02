@@ -140,7 +140,7 @@ Don't forget to give the project a star! Thanks again!
 
 Joe Haubrich - [@joe_haubrich](https://twitter.com/joe_haubrich) - jwhaubrich@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/jwhaubrich/Simple-Calculator)
+Project Link: [https://github.com/jwhaubrich/Simple-Calculator](https://github.com/jwhaubrich/Simple-Calculator)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
