@@ -64,7 +64,7 @@ This project was developed to help users perform basic mathematical functions su
 
 * [Java 8: Version 1.8.0_301 ](https://java.com/en/)
 * [Gradle: Version 7.4.2](https://gradle.org/)
-* [Groovy: Version 3.0.9](hhttps://groovy-lang.org/)
+* [Groovy: Version 3.0.9](https://groovy-lang.org/)
 * [Ant: Version 1.10.11](https://ant.apache.org/)
 * [JVM: Version 1.8.0_301](https://www.java.com/en/)
 
