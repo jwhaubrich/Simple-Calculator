@@ -1,3 +1,5 @@
+package JoeCo;
+
 public class OperationCheck {
 
     public static void checkOperation(String operation){

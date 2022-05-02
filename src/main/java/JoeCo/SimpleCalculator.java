@@ -1,3 +1,5 @@
+package JoeCo;
+
 import java.util.Locale;
 import java.util.Scanner;
 

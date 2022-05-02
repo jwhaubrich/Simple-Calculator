@@ -1,3 +1,5 @@
+package JoeCo;
+
 import java.util.Scanner;
 
 public class NumberVerification {

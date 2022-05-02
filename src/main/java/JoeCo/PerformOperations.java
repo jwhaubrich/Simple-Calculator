@@ -1,3 +1,5 @@
+package JoeCo;
+
 public class PerformOperations {
 
     public static int addFunction(int number1, int number2){
