@@ -1,6 +1,9 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+/lib/
+/out/
+.DS_STORE
 
 ###IntelliJ IDEA###
 .idea
