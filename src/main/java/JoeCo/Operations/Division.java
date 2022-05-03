@@ -1,4 +1,4 @@
-package JoeCo;
+package JoeCo.Operations;
 
 public class Division extends OperatorTemplate{
     private static int firstNumber;

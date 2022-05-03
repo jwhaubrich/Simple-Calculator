@@ -1,6 +1,8 @@
-package JoeCo;
+package JoeCo.Operations;
 
-public class Subtraction extends OperatorTemplate{
+import JoeCo.Operations.OperatorTemplate;
+
+public class Subtraction extends OperatorTemplate {
     private static int firstNumber;
     private static int secondNumber;
 

@@ -1,4 +1,4 @@
-package JoeCo;
+package JoeCo.Operations;
 
 //how is the below static integers going to effect the program overall?
 //will the same static variables be shared across

@@ -1,18 +1,18 @@
-package JoeCo;
+package JoeCo.Operations;
 
-public class Multiplication extends OperatorTemplate{
+public class Addition extends OperatorTemplate{
     private static int firstNumber;
     private static int secondNumber;
 
-    public Multiplication(int a, int b) {
+    public Addition(int a, int b) {
         super(a, b);
         firstNumber = a;
         secondNumber = b;
     }
 
-    public int performMultiplication(){
+    public int performAddition(){
         int result;
-        result = firstNumber * secondNumber;
+        result = firstNumber + secondNumber;
         return result;
     }
 }

@@ -1,4 +1,6 @@
-package JoeCo;
+package JoeCo.UserInteraction;
+
+import JoeCo.ExecuteProgram.SimpleCalculator;
 
 import java.util.Locale;
 import java.util.Scanner;

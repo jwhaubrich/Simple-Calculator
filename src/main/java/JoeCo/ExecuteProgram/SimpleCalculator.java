@@ -1,7 +1,10 @@
-package JoeCo;
+package JoeCo.ExecuteProgram;
 
-import java.util.Locale;
-import java.util.Scanner;
+import JoeCo.Operations.Addition;
+import JoeCo.Operations.Division;
+import JoeCo.Operations.Multiplication;
+import JoeCo.Operations.Subtraction;
+import JoeCo.UserInteraction.UserInput;
 
 public class SimpleCalculator {
 
@@ -11,8 +14,7 @@ public class SimpleCalculator {
 
     public static void startContinueProgram(){
         int continueProgram = 1;
-        Scanner input = new Scanner(System.in);
-        String operation = "";
+        String operation;
         UserInput newInput = new UserInput();
 
         while (continueProgram == 1) {
