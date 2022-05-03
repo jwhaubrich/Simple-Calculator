@@ -6,68 +6,23 @@ import java.util.Scanner;
 public class SimpleCalculator {
 
     public static void main(String[] args) {
-        SimpleCalculator.getOperationFromUser();
+        SimpleCalculator.startContinueProgram();
     }
 
-    public static void continueProgramCheck(){
-        int continueCalculatorOperation = 1;
+    public static void startContinueProgram(){
+        int continueProgram = 1;
         Scanner input = new Scanner(System.in);
-        String operation;
+        String operation = "";
         UserInput newInput = new UserInput();
 
-        while (continueCalculatorOperation == 1) {
-
-
-            SimpleCalculator.checkOperation(operation);
-
-            System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
-            continueCalculatorOperation = Integer.parseInt(input.nextLine());
+        while (continueProgram == 1) {
+            operation = newInput.getOperator();
+            newInput.checkOperation(operation);
+            continueProgram = newInput.continueCheck();
         }
         System.out.println("You have exited the calculator.");
     }
-    public static void getOperationFromUser(){
 
-    }
-
-    public static void checkOperation(String operation){
-        int firstNumber, secondNumber;
-
-        if(operation.contains("ADD")||operation.contains("SUBTRACT")||operation.contains("DIVIDE")||operation.contains("MULTIPLY")) {
-
-            System.out.println("Enter first number: ");
-            firstNumber = SimpleCalculator.getNumbers();
-
-            System.out.println("Please enter second number: ");
-            secondNumber = SimpleCalculator.getNumbers();
-
-            if(secondNumber == 0 && operation.contains("DIVIDE")) {
-                System.out.println("Can't divide by 0");
-                return;
-            }
-
-            SimpleCalculator.performOperations(operation, firstNumber, secondNumber);
-        } else
-
-        {
-            System.out.println("\n***Warning***");
-            System.out.println("You didn't enter one of the listed operations.");
-            System.out.println("Please enter one of the listed operations next time.\n");
-        }
-    }
-
-    public static int getNumbers()  {
-        int numberToUse = 0;
-        Scanner input = new Scanner(System.in);
-
-        try{
-            numberToUse = Integer.parseInt((input.nextLine()));
-        }
-        catch(NumberFormatException e){
-            System.out.println("Type a number next time.");
-        }
-
-        return numberToUse;
-    }
 
     public static void performOperations(String myOperation, int myFirstNumber, int mySecondNumber){
 
