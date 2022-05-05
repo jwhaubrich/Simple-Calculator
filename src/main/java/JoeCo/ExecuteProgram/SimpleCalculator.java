@@ -5,16 +5,21 @@ import JoeCo.Operations.Multiplication;
 import JoeCo.Operations.Subtraction;
 import JoeCo.UserInteraction.UserInput;
 
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
-
+@SpringBootApplication
 public class SimpleCalculator {
 
     public static void main(String[] args) {
-        SimpleCalculator.startContinueProgram();
-        //SpringApplication.run(SimpleCalculator.class, args);
+        //SimpleCalculator.startContinueProgram();
+        SpringApplication.run(SimpleCalculator.class, args);
     }
 
-
+    @Bean
     public static void startContinueProgram(){
         int continueProgram = 1;
         String operation;
