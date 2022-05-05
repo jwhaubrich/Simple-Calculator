@@ -1,17 +1,19 @@
 package JoeCo.ExecuteProgram;
-// this comment is for the newFeature branch
-// another comment for the newFeature branch
 import JoeCo.Operations.Addition;
 import JoeCo.Operations.Division;
 import JoeCo.Operations.Multiplication;
 import JoeCo.Operations.Subtraction;
 import JoeCo.UserInteraction.UserInput;
 
+
+
 public class SimpleCalculator {
 
     public static void main(String[] args) {
         SimpleCalculator.startContinueProgram();
+        //SpringApplication.run(SimpleCalculator.class, args);
     }
+
 
     public static void startContinueProgram(){
         int continueProgram = 1;
