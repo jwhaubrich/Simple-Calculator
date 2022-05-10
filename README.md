@@ -56,7 +56,10 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Casio_calculator_JS-20WK_in_201901_002.jpg/340px-Casio_calculator_JS-20WK_in_201901_002.jpg)
 
-This project was developed to help users perform basic mathematical functions such as addition, subtraction, multiply, and divide. The functionality within the code is very basic to aid in execution of the program for the user. Upon execution of the main program the user will 1) select which operation to perform 2) enter the two numbers that they wish to use within the applicaiton.
+This project was developed to help users perform basic mathematical functions such as addition, subtraction, multiply, and divide. The functionality within the code is very basic to aid in execution of the program for the user. Upon execution of the main program the user will 
+1. Select which operation to perform.
+2. Enter the two numbers that they wish to use within the applicaiton.
+3. Decide if they want to continue.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -77,64 +80,44 @@ This project was developed to help users perform basic mathematical functions su
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+First, we'll need to copy this repo to your machine, then running the application by creating a jar file. Please see the instructions that follow:
 
-### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+### Running the Program
 
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/jwhaubrich/Simple-Calculator.git
    ```
-3. Install NPM packages
+2. Navigate to local directory where the repo is located on your machine. In that same directory, run the following command to create jar file with Gradle.
    ```sh
-   npm install
+   ./gradlew jar
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Change directories to SimpleCalculator>build>libs
+   ```sh
+   cd build/libs
+   ```
+4. Run the Simple Calculator program with:
+   ```sh
+   java -jar SimpleCalculatorWithGradle-1.0.2.jar 
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+2. Create your Feature Branch (`git switch -c feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
