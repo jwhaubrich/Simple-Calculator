@@ -11,7 +11,6 @@ public class SimpleCalculator {
 
     public static void main(String[] args) {
         SimpleCalculator.startContinueProgram();
-        //SpringApplication.run(SimpleCalculator.class, args);
     }
 
 
