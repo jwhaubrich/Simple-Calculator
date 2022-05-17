@@ -14,13 +14,13 @@ jar{
     archiveBaseName = 'SimpleCalculatorWithGradle'
 
     manifest {
-        attributes 'Main-Class': "JoeCo.ExecuteProgram.SimpleCalculator"
+        attributes 'Main-Class': "joeco.executeprogram.SimpleCalculator"
     }
 
 }
 
 application{
-    mainClass = 'JoeCo.ExecuteProgram.SimpleCalculator'
+    mainClass = 'joeco.executeprogram.SimpleCalculator'
 }
 
 repositories {
