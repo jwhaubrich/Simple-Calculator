@@ -1,18 +1,12 @@
-package JoeCo.Operations;
+package joeco.operations;
 
 public class Division extends OperatorTemplate{
-    private static int firstNumber;
-    private static int secondNumber;
 
-    public Division(int a, int b) {
-        super(a, b);
-        firstNumber = a;
-        secondNumber = b;
+    public Division(int firstNumber, int secondNumber) {
+        super(firstNumber, secondNumber);
     }
 
     public int performDivision(){
-        int result = 0;
-        result = firstNumber / secondNumber;
-        return result;
+        return firstNumber / secondNumber;
     }
 }

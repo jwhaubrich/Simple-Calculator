@@ -1,6 +1,7 @@
-package JoeCo.UserInteraction;
+package joeco.userinteraction;
 
-import JoeCo.ExecuteProgram.SimpleCalculator;
+import joeco.executeprogram.SimpleCalculator;
+import joeco.utils.Constants;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -10,7 +11,6 @@ public class UserInput {
 
     public String getOperator(){
         String operator;
-        Scanner input = new Scanner(System.in);
 
         System.out.println("Select an operation: add, subtract, divide, multiply ");
         operator = input.nextLine().toUpperCase(Locale.ROOT);
@@ -20,7 +20,6 @@ public class UserInput {
 
     public int receiveNumbersFromUser(){
             int numberToUse = 0;
-            Scanner input = new Scanner(System.in);
 
             try{
                 numberToUse = Integer.parseInt((input.nextLine()));
@@ -33,9 +32,10 @@ public class UserInput {
     }
 
     public void checkOperation(String operation){
-        int firstNumber, secondNumber;
+        int firstNumber;
+        int secondNumber;
 
-        if(operation.contains("ADD")||operation.contains("SUBTRACT")||operation.contains("DIVIDE")||operation.contains("MULTIPLY")) {
+        if(Constants.OPERATIONS_LIST.contains(operation)) {
 
             System.out.println("Enter first number: ");
             firstNumber = receiveNumbersFromUser();

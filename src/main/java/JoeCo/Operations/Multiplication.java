@@ -1,18 +1,12 @@
-package JoeCo.Operations;
+package joeco.operations;
 
 public class Multiplication extends OperatorTemplate{
-    private static int firstNumber;
-    private static int secondNumber;
 
-    public Multiplication(int a, int b) {
-        super(a, b);
-        firstNumber = a;
-        secondNumber = b;
+    public Multiplication(int firstNumber, int secondNumber) {
+        super(firstNumber, secondNumber);
     }
 
     public int performMultiplication(){
-        int result;
-        result = firstNumber * secondNumber;
-        return result;
+        return firstNumber * secondNumber;
     }
 }

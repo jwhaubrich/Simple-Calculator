@@ -1,7 +1,7 @@
-import JoeCo.Operations.Addition;
-import JoeCo.Operations.Division;
-import JoeCo.Operations.Multiplication;
-import JoeCo.Operations.Subtraction;
+import joeco.operations.Addition;
+import joeco.operations.Division;
+import joeco.operations.Multiplication;
+import joeco.operations.Subtraction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
