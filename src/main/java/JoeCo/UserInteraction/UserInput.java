@@ -44,8 +44,7 @@ public class UserInput {
             secondNumber = receiveNumbersFromUser();
 
             if(secondNumber == 0 && operation.contains("DIVIDE")) {
-                System.out.println("Can't divide by 0");
-                return;
+                throw new ArithmeticException("Cannot divide by 0");
             }
 
             SimpleCalculator.performOperations(operation, firstNumber, secondNumber);

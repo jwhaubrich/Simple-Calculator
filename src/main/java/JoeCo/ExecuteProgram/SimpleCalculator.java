@@ -1,8 +1,5 @@
 package joeco.executeprogram;
-import joeco.operations.Addition;
-import joeco.operations.Division;
-import joeco.operations.Multiplication;
-import joeco.operations.Subtraction;
+import joeco.operations.*;
 import joeco.userinteraction.UserInput;
 
 
