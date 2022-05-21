@@ -4,6 +4,7 @@ import joeco.executeprogram.SimpleCalculator;
 import joeco.operations.Strategy;
 import joeco.utils.Constants;
 import joeco.utils.OperationHashMap;
+
 import java.util.Locale;
 import java.util.Scanner;
 

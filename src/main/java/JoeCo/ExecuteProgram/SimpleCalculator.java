@@ -4,7 +4,6 @@ import joeco.userinteraction.UserInput;
 import joeco.utils.Context;
 import joeco.utils.OperationHashMap;
 
-
 public class SimpleCalculator {
     private static UserInput newInput = new UserInput();
 
