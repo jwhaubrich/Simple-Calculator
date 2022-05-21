@@ -1,11 +1,9 @@
 package joeco.operations;
 
-public class Subtraction extends OperatorTemplate {
-    public Subtraction(int firstNumber, int secondNumber) {
-        super(firstNumber, secondNumber);
-    }
-
-    public int performSubtraction(){
+public class Subtraction implements Strategy {
+    @Override
+    public int performOperation(int firstNumber, int secondNumber) {
         return firstNumber - secondNumber;
     }
+
 }

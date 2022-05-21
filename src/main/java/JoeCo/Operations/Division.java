@@ -1,12 +1,9 @@
 package joeco.operations;
 
-public class Division extends OperatorTemplate{
-
-    public Division(int firstNumber, int secondNumber) {
-        super(firstNumber, secondNumber);
-    }
-
-    public int performDivision(){
+public class Division implements Strategy {
+    @Override
+    public int performOperation(int firstNumber, int secondNumber) {
         return firstNumber / secondNumber;
     }
 }
+

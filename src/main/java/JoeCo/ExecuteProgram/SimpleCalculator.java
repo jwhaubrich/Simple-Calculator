@@ -1,6 +1,8 @@
 package joeco.executeprogram;
 import joeco.operations.*;
 import joeco.userinteraction.UserInput;
+import joeco.utils.Context;
+import joeco.utils.OperationHashMap;
 
 
 public class SimpleCalculator {
@@ -11,6 +13,7 @@ public class SimpleCalculator {
 
     public static void startContinueProgram(){
         int continueProgram = 1;
+        OperationHashMap.mapStringToOperation();
         String operation;
         UserInput newInput = new UserInput();
 
@@ -23,27 +26,14 @@ public class SimpleCalculator {
     }
 
 
-    public static void performOperations(String myOperation, int myFirstNumber, int mySecondNumber){
-        switch (myOperation) {
-            case "ADD":
-                Addition exeAdd = new Addition(myFirstNumber, mySecondNumber);
-                displayAnswer(exeAdd.performAddition());
-                break;
-            case "SUBTRACT":
-                Subtraction exeSubtraction = new Subtraction(myFirstNumber, mySecondNumber);
-                displayAnswer(exeSubtraction.performSubtraction());
-                break;
-            case "MULTIPLY":
-                Multiplication exeMultiplication = new Multiplication(myFirstNumber, mySecondNumber);
-                displayAnswer(exeMultiplication.performMultiplication());
-                break;
-            case "DIVIDE":
-                Division exeDivision = new Division(myFirstNumber, mySecondNumber);
-                displayAnswer(exeDivision.performDivision());
-                break;
-            default:
-                break;
-        }
+    public static void performOperations(Strategy newStrategy, int firstNumber, int secondNumber){
+        int answer = 0;
+        Context newContext = new Context();
+
+        newContext.setStrategy(newStrategy);
+        answer = newContext.executeStrategy(firstNumber, secondNumber);
+
+        displayAnswer(answer);
     }
 
     public static void displayAnswer(int calculationResult){

@@ -1,7 +1,10 @@
 package joeco.userinteraction;
 
 import joeco.executeprogram.SimpleCalculator;
+
+import joeco.operations.Strategy;
 import joeco.utils.Constants;
+import joeco.utils.OperationHashMap;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -34,6 +37,7 @@ public class UserInput {
     public void checkOperation(String operation){
         int firstNumber;
         int secondNumber;
+        Strategy newStrategy;
 
         if(Constants.OPERATIONS_LIST.contains(operation)) {
 
@@ -47,10 +51,10 @@ public class UserInput {
                 throw new ArithmeticException("Cannot divide by 0");
             }
 
-            SimpleCalculator.performOperations(operation, firstNumber, secondNumber);
-        } else
-
-        {
+            newStrategy = OperationHashMap.operationMap.get(operation);
+            SimpleCalculator.performOperations(newStrategy, firstNumber, secondNumber);
+        }
+        else {
             System.out.println("\n***Warning***");
             System.out.println("You didn't enter one of the listed operations.");
             System.out.println("Please enter one of the listed operations next time.\n");

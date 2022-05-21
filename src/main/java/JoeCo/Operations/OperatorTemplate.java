@@ -6,8 +6,10 @@ public abstract class OperatorTemplate {
     int firstNumber;
     int secondNumber;
 
+    /*
     public OperatorTemplate(int firstNumber, int secondNumber) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
-    }
+    }*/
+
 }

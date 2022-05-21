@@ -1,14 +1,8 @@
 package joeco.operations;
 
-public class Addition extends OperatorTemplate{
-
-    public Addition(int firstNumber, int secondNumber) {
-        super(firstNumber, secondNumber);
-    }
-
-    public int performAddition(){
+public class Addition implements Strategy{
+    @Override
+    public int performOperation(int firstNumber, int secondNumber) {
         return firstNumber + secondNumber;
     }
-
-
 }
