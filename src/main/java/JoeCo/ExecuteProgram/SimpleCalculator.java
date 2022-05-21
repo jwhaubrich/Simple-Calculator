@@ -6,28 +6,29 @@ import joeco.utils.OperationHashMap;
 
 
 public class SimpleCalculator {
+    private static UserInput newInput = new UserInput();
 
     public static void main(String[] args) {
-        SimpleCalculator.startContinueProgram();
+        SimpleCalculator.startAndContinueProgram();
     }
 
-    public static void startContinueProgram(){
-        int continueProgram = 1;
-        OperationHashMap.mapStringToOperation();
+    private static void startAndContinueProgram(){
+        int continueProgram;
         String operation;
-        UserInput newInput = new UserInput();
+        OperationHashMap.mapStringToOperation();
 
-        while (continueProgram == 1) {
+        do {
             operation = newInput.getOperator();
             newInput.checkOperation(operation);
             continueProgram = newInput.continueCheck();
-        }
+        }while(continueProgram ==1);
+
         System.out.println("You have exited the calculator.");
     }
 
-
     public static void performOperations(Strategy newStrategy, int firstNumber, int secondNumber){
         int answer = 0;
+
         Context newContext = new Context();
 
         newContext.setStrategy(newStrategy);
@@ -36,7 +37,7 @@ public class SimpleCalculator {
         displayAnswer(answer);
     }
 
-    public static void displayAnswer(int calculationResult){
+    private static void displayAnswer(int calculationResult){
         System.out.println("The answer is: "+ calculationResult);
     }
 

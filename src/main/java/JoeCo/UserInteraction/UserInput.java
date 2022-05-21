@@ -1,16 +1,14 @@
 package joeco.userinteraction;
 
 import joeco.executeprogram.SimpleCalculator;
-
 import joeco.operations.Strategy;
 import joeco.utils.Constants;
 import joeco.utils.OperationHashMap;
-
 import java.util.Locale;
 import java.util.Scanner;
 
 public class UserInput {
-    private static Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
 
     public String getOperator(){
         String operator;
@@ -21,7 +19,7 @@ public class UserInput {
         return operator;
     }
 
-    public int receiveNumbersFromUser(){
+    private int receiveNumbersFromUser(){
             int numberToUse = 0;
 
             try{
@@ -62,11 +60,7 @@ public class UserInput {
     }
 
     public int continueCheck(){
-        int continueCalculatorOperation = 1;
-
         System.out.println("Do you wish to continue? Enter 1 for yes, 2 for no: ");
-        continueCalculatorOperation = Integer.parseInt(input.nextLine());
-
-        return continueCalculatorOperation;
+        return Integer.parseInt(input.nextLine());
     }
 }
