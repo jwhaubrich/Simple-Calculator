@@ -48,15 +48,7 @@ class SimpleCalculatorTest {
         Assertions.assertEquals(6,result);
     }
 
-    @Test
-    void shouldReturnDivideByZeroError() {
-        int result;
 
-        Division divideTest = new Division();
-        result = divideTest.performOperation(5,0);
-
-        Assertions.assertEquals("Cannot divide by 0", );
-    }
 
 
     @Test
