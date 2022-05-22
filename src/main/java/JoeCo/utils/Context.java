@@ -1,7 +1,5 @@
 package joeco.utils;
 
-import joeco.operations.Strategy;
-
 public class Context {
     private Strategy strategy;
 

@@ -11,9 +11,8 @@ class SimpleCalculatorTest {
     @Test
     void testAdditionShouldReturnFour() {
         int result;
-
-        Addition exeAdd = new Addition(2,2);
-        result = exeAdd.performAddition();
+        Addition additionTest = new Addition();
+        result = additionTest.performOperation(2,2);
 
         Assertions.assertEquals(4,result);
     }
@@ -23,8 +22,8 @@ class SimpleCalculatorTest {
     void testSubtractionShouldReturnThree() {
         int result;
 
-        Subtraction exeSubtract = new Subtraction(6,3);
-        result = exeSubtract.performSubtraction();
+        Subtraction subtractionTest = new Subtraction();
+        result = subtractionTest.performOperation(6,3);
 
         Assertions.assertEquals(3,result);
     }
@@ -33,8 +32,8 @@ class SimpleCalculatorTest {
     void testSubtractionShouldReturnNegativeFive() {
         int result;
 
-        Subtraction exeSubtract = new Subtraction(0,5);
-        result = exeSubtract.performSubtraction();
+        Subtraction subtractionTest = new Subtraction();
+        result = subtractionTest.performOperation(5,10);
 
         Assertions.assertEquals(-5,result);
     }
@@ -43,10 +42,20 @@ class SimpleCalculatorTest {
     void testDivisionShouldReturnSix() {
         int result;
 
-        Division exeDivide = new Division(12,2);
-        result = exeDivide.performDivision();
+        Division divideTest = new Division();
+        result = divideTest.performOperation(12,2);
 
         Assertions.assertEquals(6,result);
+    }
+
+    @Test
+    void testDivisionShouldReturnSix() {
+        int result;
+
+        Division divideTest = new Division();
+        result = divideTest.performOperation(5,0);
+
+        Assertions.assert;
     }
 
 
@@ -54,8 +63,8 @@ class SimpleCalculatorTest {
     void testMultiplicationShouldReturnTwentyFive() {
         int result;
 
-        Multiplication exeMultiply = new Multiplication(5,5);
-        result = exeMultiply.performMultiplication();
+        Multiplication multiplyTest = new Multiplication();
+        result = multiplyTest.performOperation(5,5);
 
         Assertions.assertEquals(25,result);
     }
@@ -64,8 +73,8 @@ class SimpleCalculatorTest {
     void testMultiplicationShouldReturnNegativeTwo() {
         int result;
 
-        Multiplication exeMultiply = new Multiplication(-1,2);
-        result = exeMultiply.performMultiplication();
+        Multiplication multiplyTest = new Multiplication();
+        result = multiplyTest.performOperation(-1,2);
 
         Assertions.assertEquals(-2,result);
     }

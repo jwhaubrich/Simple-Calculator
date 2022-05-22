@@ -1,7 +1,7 @@
 package joeco.userinteraction;
 
 import joeco.executeprogram.SimpleCalculator;
-import joeco.operations.Strategy;
+import joeco.utils.Strategy;
 import joeco.utils.Constants;
 import joeco.utils.OperationHashMap;
 

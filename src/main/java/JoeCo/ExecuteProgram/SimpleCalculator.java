@@ -1,8 +1,8 @@
 package joeco.executeprogram;
-import joeco.operations.*;
 import joeco.userinteraction.UserInput;
 import joeco.utils.Context;
 import joeco.utils.OperationHashMap;
+import joeco.utils.Strategy;
 
 public class SimpleCalculator {
     private static UserInput newInput = new UserInput();
