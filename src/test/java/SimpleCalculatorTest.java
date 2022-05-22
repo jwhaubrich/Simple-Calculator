@@ -49,13 +49,13 @@ class SimpleCalculatorTest {
     }
 
     @Test
-    void testDivisionShouldReturnSix() {
+    void shouldReturnDivideByZeroError() {
         int result;
 
         Division divideTest = new Division();
         result = divideTest.performOperation(5,0);
 
-        Assertions.assert;
+        Assertions.assertEquals("Cannot divide by 0", );
     }
 
 
