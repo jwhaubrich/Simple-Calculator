@@ -1,7 +1,7 @@
 package joeco.executeprogram;
 import joeco.userinteraction.UserInput;
+import joeco.utils.Constants;
 import joeco.utils.Context;
-import joeco.utils.OperationHashMap;
 import joeco.utils.Strategy;
 
 public class SimpleCalculator {
@@ -14,7 +14,7 @@ public class SimpleCalculator {
     private static void startAndContinueProgram(){
         int continueProgram;
         String operation;
-        OperationHashMap.mapStringToOperation();
+        Constants.mapStringToOperation();
 
         do {
             operation = newInput.getOperator();

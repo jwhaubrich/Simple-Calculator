@@ -3,8 +3,6 @@ package joeco.userinteraction;
 import joeco.executeprogram.SimpleCalculator;
 import joeco.utils.Strategy;
 import joeco.utils.Constants;
-import joeco.utils.OperationHashMap;
-
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -50,7 +48,7 @@ public class UserInput {
                 throw new ArithmeticException("Cannot divide by 0");
             }
 
-            newStrategy = OperationHashMap.operationMap.get(operation);
+            newStrategy = Constants.operationMap.get(operation);
             SimpleCalculator.performOperations(newStrategy, firstNumber, secondNumber);
         }
         else {
