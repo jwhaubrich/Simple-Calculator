@@ -5,6 +5,8 @@ import joeco.operations.Subtraction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 class SimpleCalculatorTest {
 
     @Test
@@ -45,6 +47,14 @@ class SimpleCalculatorTest {
         result = divideTest.performOperation(12,2);
 
         Assertions.assertEquals(6,result);
+    }
+
+
+    @Test
+    void testDivisionShouldReturnDivideByZeroException() {
+        Division newDivisionTest = new Division();
+
+        Assertions.assertThrows(ArithmeticException.class, ()->{newDivisionTest.performOperation(5,0);});
     }
 
 
