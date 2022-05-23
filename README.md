@@ -89,19 +89,11 @@ First, we'll need to copy this repo to your machine, then running the applicatio
    ```sh
    git clone https://github.com/jwhaubrich/Simple-Calculator.git
    ```
-2. Navigate to local directory where the repo is located on your machine. In that same directory, run the following command to create jar file with Gradle.
+2. Navigate to the local directory where the repo is located on your machine.
+3. Run the Simple Calculator program with:
    ```sh
-   ./gradlew jar
+   ./gradlew run
    ```
-3. Change directories to SimpleCalculator>build>libs
-   ```sh
-   cd build/libs
-   ```
-4. Run the Simple Calculator program with:
-   ```sh
-   java -jar SimpleCalculatorWithGradle-1.0.2.jar 
-   ```
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
