@@ -5,7 +5,6 @@ import joeco.operations.Subtraction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 class SimpleCalculatorTest {
 
     @Test
@@ -47,8 +46,6 @@ class SimpleCalculatorTest {
 
         Assertions.assertEquals(6,result);
     }
-
-
 
 
     @Test

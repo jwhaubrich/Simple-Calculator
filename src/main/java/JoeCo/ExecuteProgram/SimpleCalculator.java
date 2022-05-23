@@ -26,8 +26,7 @@ public class SimpleCalculator {
     }
 
     public static void performOperations(Strategy newStrategy, int firstNumber, int secondNumber){
-        int answer = 0;
-
+        int answer;
         Context newContext = new Context();
 
         newContext.setStrategy(newStrategy);
